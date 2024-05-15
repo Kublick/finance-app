@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals"
+    // "plugin:readable-tailwind/warning",
+    // "plugin:readable-tailwind/error"
+  ]
+  // "parserOptions": {
+  //   "ecmaFeatures": {
+  //     "jsx": true
+  //   },
+  //   "ecmaVersion": "latest"
+  // },
+  // "plugins": ["readable-tailwind"],
+  // "rules": {
+  //   "readable-tailwind/multiline": ["warn", { "printWidth": 100 }]
+  // }
 }

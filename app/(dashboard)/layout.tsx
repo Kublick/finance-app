@@ -8,7 +8,7 @@ export default function DashboardLayout({
   return (
     <>
       <Header />
-      <main className="px3 lg:px-14">{children}</main>
+      <main className={"px-3 lg:px-14"}>{children}</main>
     </>
   );
 }
