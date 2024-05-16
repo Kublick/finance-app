@@ -1,8 +1,5 @@
 "use client";
 
-import { useGetAccounts } from "@/features/account/api/user-get-accounts";
-import { useBulkDeleteAccounts } from "@/features/account/api/use-bulk-delete";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, Plus } from "lucide-react";
@@ -12,10 +9,11 @@ import { DataTable } from "@/components/data-table";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useNewCategory } from "@/features/categories/hooks/use-new-category";
 import { useGetCategories } from "@/features/categories/api/user-get-categories";
+import { useBulkDeleteCategories } from "@/features/categories/api/use-bulk-delete-categories";
 
 const CategoriesPage = () => {
   const newCategory = useNewCategory();
-  const deleteCategories = useBulkDeleteAccounts();
+  const deleteCategories = useBulkDeleteCategories();
   const categoriesQuery = useGetCategories();
   const categories = categoriesQuery.data || [];
 
