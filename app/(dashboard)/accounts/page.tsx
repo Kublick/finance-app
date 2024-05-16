@@ -2,7 +2,7 @@
 
 import { useGetAccounts } from "@/features/account/api/user-get-accounts";
 import { useBulkDeleteAccounts } from "@/features/account/api/use-bulk-delete";
-import { useNewAccount } from "@/features/account/hooks/useNewAccount";
+import { useNewAccount } from "@/features/account/hooks/use-new-account";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, Plus } from "lucide-react";

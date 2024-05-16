@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useGetAccounts } from "@/features/account/api/user-get-accounts";
-import { useNewAccount } from "@/features/account/hooks/useNewAccount";
+import { useNewAccount } from "@/features/account/hooks/use-new-account";
 
 export default function Home() {
   const { onOpen } = useNewAccount();

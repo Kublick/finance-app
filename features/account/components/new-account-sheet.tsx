@@ -5,11 +5,11 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { useNewAccount } from "./hooks/useNewAccount";
-import { AccountForm } from "./components/accounts-form";
+import { useNewAccount } from "../hooks/use-new-account";
+import { AccountForm } from "./accounts-form";
 import { insertAccountSchema } from "@/db/schema";
 import { z } from "zod";
-import { useCreateAccounts } from "./api/use-create-accounts";
+import { useCreateAccounts } from "../api/use-create-accounts";
 
 const formSchema = insertAccountSchema.pick({ name: true });
 
@@ -35,7 +35,11 @@ export const NewAccountSheet = () => {
             Create a new account to track your transactions.
           </SheetDescription>
         </SheetHeader>
-        <AccountForm onSubmit={onSubmit} disabled={mutation.isPending} />
+        <AccountForm
+          onSubmit={onSubmit}
+          disabled={mutation.isPending}
+          defaultValues={{ name: "" }}
+        />
       </SheetContent>
     </Sheet>
   );

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { InferRequestType, InferResponseType } from "hono";
 import { client } from "@/lib/hono";
+import { Actions } from "./actions";
 
 export type ResponseType = InferResponseType<
   typeof client.api.accounts.$get,
@@ -50,6 +51,10 @@ export const columns: ColumnDef<ResponseType>[] = [
         </Button>
       );
     },
+  },
+  {
+    id: "actions",
+    cell: ({ row }) => <Actions id={row.original.id} />,
   },
   // {
   //   accessorKey: "email",
