@@ -134,6 +134,7 @@ const app = new Hono()
     zValidator("json", z.array(insertTransactionSchema.omit({ id: true }))),
     async (c) => {
       const auth = getAuth(c);
+
       const values = c.req.valid("json");
 
       if (!auth?.userId) {

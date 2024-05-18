@@ -25,7 +25,7 @@ import { convertAmountToMiliUnits } from "../../../lib/utils";
 const formSchema = z.object({
   date: z.coerce.date(),
   accountId: z.string(),
-  categoryId: z.string(),
+  categoryId: z.string().optional(),
   payee: z.string(),
   amount: z.string(),
   notes: z.string().nullable().optional(),
@@ -199,12 +199,12 @@ export const TransactionForm = ({
         />
 
         <Button className="w-full" disabled={disabled} type="submit">
-          {id ? "Save Changes" : "Create Account"}
+          {id ? "Save Changes" : "Create Transaction"}
         </Button>
         {!!id && (
           <Button type="button" onClick={handleDelete} variant="outline">
             <Trash className="mr-2 size-4" />
-            Delete Account
+            Delete Transaction
           </Button>
         )}
       </form>
