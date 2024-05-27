@@ -9,7 +9,7 @@ import { DataTable } from "@/components/data-table";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-delete-transaction";
-import { useGetTransactions } from "@/features/transactions/api/user-get-transactions";
+import { useGetTransactions } from "@/features/transactions/api/use-get-transactions";
 import { useState } from "react";
 import { UploadButton } from "./upload-button";
 import { ImportCard } from "./import-card";
