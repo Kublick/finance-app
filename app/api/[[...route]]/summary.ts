@@ -37,6 +37,7 @@ const app = new Hono().get(
       ? parse(from, "yyyy-MM-dd", new Date())
       : defaultFrom;
     const endDate = to ? parse(to, "yyyy-MM-dd", new Date()) : defaultoTo;
+    endDate.setHours(23, 59, 59, 999);
 
     const periodLength = differenceInDays(endDate, startDate) + 1;
     const lastPeriodStart = subDays(startDate, periodLength);
@@ -121,6 +122,7 @@ const app = new Hono().get(
       .orderBy(desc(sql`SUM(ABS(${transactions.amount}))`));
 
     const topCategories = category.slice(0, 3);
+
     const otherCategories = category.slice(3);
     const otherSum = otherCategories.reduce((acc, { value }) => acc + value, 0);
 

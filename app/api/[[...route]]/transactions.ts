@@ -39,7 +39,8 @@ const app = new Hono()
         ? parse(from, "yyyy-MM-dd", new Date())
         : defaultFrom;
 
-      const endDate = from ? parse(from, "yyyy-MM-dd", new Date()) : defaultTo;
+      const endDate = to ? parse(to, "yyyy-MM-dd", new Date()) : defaultTo;
+      endDate.setHours(23, 59, 59, 999);
 
       const data = await db
         .select({
