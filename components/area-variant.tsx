@@ -1,6 +1,4 @@
 import { format } from "date-fns";
-import { QueryClient } from "@tanstack/react-query";
-
 import {
   Tooltip,
   ResponsiveContainer,
@@ -20,7 +18,6 @@ type Props = {
 };
 
 const AreaVariant = ({ data }: Props) => {
-  console.log(data);
   return (
     <ResponsiveContainer width="100%" height={350}>
       <AreaChart data={data}>
