@@ -62,7 +62,7 @@ const DateFilter = () => {
           disabled={false}
           size="sm"
           variant="outline"
-          className="hover:text-whote foucs:ring-offset-0 h-9 w-full rounded-md border-none bg-white/20 px-3 font-normal text-white outline-none transition focus:bg-white/30 focus:ring-transparent lg:w-auto"
+          className="h-9 w-full rounded-md border-none bg-white/20 px-3 font-normal text-white outline-none transition hover:bg-white/40 hover:text-white focus:bg-white/30 focus:ring-transparent focus:ring-offset-0 lg:w-auto"
         >
           <span>{formatDateRange(paramState)}</span>
           <ChevronDown className="ml-2 size-4 opacity-50" />
@@ -86,7 +86,7 @@ const DateFilter = () => {
               className="w-full"
               variant={"outline"}
             >
-              Reset
+              Reiniciar
             </Button>
           </PopoverClose>
           <PopoverClose asChild>
@@ -97,7 +97,7 @@ const DateFilter = () => {
               disabled={!date?.from || !date?.to}
               className="w-full"
             >
-              Apply
+              Aplicar
             </Button>
           </PopoverClose>
         </div>

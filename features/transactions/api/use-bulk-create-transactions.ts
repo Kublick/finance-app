@@ -26,12 +26,12 @@ export const useBulkCreateTransactions = () => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Transactions created");
+      toast.success("Movimientos creados");
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to create transactions");
+      toast.error("Ocurrio un error al crear los movimientos");
     },
   });
   return mutation;

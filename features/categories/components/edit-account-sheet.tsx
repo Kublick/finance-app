@@ -25,8 +25,8 @@ type FormValues = z.infer<typeof formSchema>;
 export const EditCategorySheet = () => {
   const { isOpen, onClose, id } = useOpenCategory();
   const [ConfirmDialog, confirm] = useConfirm(
-    "Are you sure?",
-    "You are about to delete this category",
+    "¿Estas seguro?",
+    "Estas por borrar esta categoria.",
   );
   const categoryQuery = useGetCategory(id);
   const editMutation = useEditCategory(id);
@@ -60,8 +60,10 @@ export const EditCategorySheet = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Edit Category</SheetTitle>
-            <SheetDescription>Edit an existing category.</SheetDescription>
+            <SheetTitle>Actualizar Categoria</SheetTitle>
+            <SheetDescription>
+              Actualiza una categoria existente.
+            </SheetDescription>
           </SheetHeader>
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center">

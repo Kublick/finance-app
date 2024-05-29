@@ -33,7 +33,7 @@ const SpendingPie = ({ data = [] }: Props) => {
   return (
     <Card className="border-shadow-sm border-none">
       <CardHeader className="flex justify-between space-y-2 lg:flex-row lg:items-center lg:space-y-0 ">
-        <CardTitle className="line-clamp-1 text-xl">Categories</CardTitle>
+        <CardTitle className="line-clamp-1 text-xl">Categorias Top</CardTitle>
         <Select defaultValue={chartType} onValueChange={onTypeChange}>
           <SelectTrigger className="h-9 rounded-md px-3 lg:w-auto">
             <SelectValue placeholder="Select Chart Type" />
@@ -42,19 +42,19 @@ const SpendingPie = ({ data = [] }: Props) => {
             <SelectItem value="pie">
               <div className="flex items-center">
                 <PieChartIcon className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Pie Chart</p>
+                <p className="line-clamp-1">Pie</p>
               </div>
             </SelectItem>
             <SelectItem value="radar">
               <div className="flex items-center">
                 <Radar className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Radar Chart</p>
+                <p className="line-clamp-1">Radar</p>
               </div>
             </SelectItem>
             <SelectItem value="radial">
               <div className="flex items-center">
                 <Target className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Bar Chart</p>
+                <p className="line-clamp-1">Radial</p>
               </div>
             </SelectItem>
           </SelectContent>

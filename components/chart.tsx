@@ -38,7 +38,7 @@ const Chart = ({ data = [] }: Props) => {
   return (
     <Card className="border-shadow-sm border-none">
       <CardHeader className="flex justify-between space-y-2 lg:flex-row lg:items-center lg:space-y-0 ">
-        <CardTitle className="line-clamp-1 text-xl">Transactions</CardTitle>
+        <CardTitle className="line-clamp-1 text-xl">Transacciones</CardTitle>
         <Select defaultValue={chartType} onValueChange={onTypeChange}>
           <SelectTrigger className="h-9 rounded-md px-3 lg:w-auto">
             <SelectValue placeholder="Select Chart Type" />
@@ -47,19 +47,19 @@ const Chart = ({ data = [] }: Props) => {
             <SelectItem value="area">
               <div className="flex items-center">
                 <AreaChart className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Area Chart</p>
+                <p className="line-clamp-1">Area</p>
               </div>
             </SelectItem>
             <SelectItem value="line">
               <div className="flex items-center">
                 <LineChart className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Line Chart</p>
+                <p className="line-clamp-1">Lineas</p>
               </div>
             </SelectItem>
             <SelectItem value="bar">
               <div className="flex items-center">
                 <BarChart3 className="mr-2 size-4 shrink-0" />
-                <p className="line-clamp-1">Bar Chart</p>
+                <p className="line-clamp-1">Barras</p>
               </div>
             </SelectItem>
           </SelectContent>

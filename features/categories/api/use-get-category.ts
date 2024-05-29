@@ -9,7 +9,6 @@ export const useGetCategory = (id?: string) => {
       const respose = await client.api.categories[":id"].$get({
         param: { id },
       });
-      console.log("response", respose);
 
       if (!respose.ok) {
         throw new Error("Failed to fetch category");

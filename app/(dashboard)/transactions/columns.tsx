@@ -50,7 +50,7 @@ export const columns: ColumnDef<ResponseType>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Date
+          Fecha
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
@@ -69,7 +69,7 @@ export const columns: ColumnDef<ResponseType>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Category
+          Categoria
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
@@ -92,7 +92,7 @@ export const columns: ColumnDef<ResponseType>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Payee
+          Beneficiario
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
@@ -106,7 +106,7 @@ export const columns: ColumnDef<ResponseType>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Amount
+          Monto
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
@@ -132,7 +132,7 @@ export const columns: ColumnDef<ResponseType>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Account
+          Cuenta
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );

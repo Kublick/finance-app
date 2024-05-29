@@ -54,11 +54,11 @@ export const useSelectAccount = (): [
   };
 
   const ConfirmationDialog = () => (
-    <Dialog open={promise !== null}>
+    <Dialog open={promise !== null} onOpenChange={handleCancel}>
       <DialogContent>
-        <DialogHeader>
+        <DialogHeader className="pt-6">
           <Select
-            placeholder="Select an Account"
+            placeholder="Selecciona una cuenta"
             options={accountOptions}
             onChange={(value) => {
               selectValue.current = value;
@@ -67,16 +67,16 @@ export const useSelectAccount = (): [
             onCreate={onCreateAccount}
           />
 
-          <DialogTitle>Select Account</DialogTitle>
+          <DialogTitle>Selecciona una cuenta</DialogTitle>
           <DialogDescription>
-            Please select an account to continue
+            Selecciona una cuenta para continuar
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="pt-2">
-          <Button onClick={handleCancel} variant="outline">
-            Cancel
+          <Button onClick={handleCancel} variant="destructive">
+            Cancelar
           </Button>
-          <Button onClick={handleConfirm}>Confirm</Button>
+          <Button onClick={handleConfirm}>Confirmar</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

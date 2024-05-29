@@ -15,7 +15,7 @@ import { useCreateCategory } from "@/features/categories/api/use-create-category
 import { useGetAccounts } from "@/features/account/api/user-get-accounts";
 import { useCreateAccounts } from "@/features/account/api/use-create-accounts";
 import { TransactionForm } from "./transaction-form";
-import { Loader2, LoaderIcon } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 const formSchema = insertTransactionSchema.omit({ id: true });
 
@@ -67,8 +67,8 @@ export const NewTransactionSheet = () => {
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>New Transaction</SheetTitle>
-          <SheetDescription>Add a new transaction.</SheetDescription>
+          <SheetTitle>Nuevo Movimiento</SheetTitle>
+          <SheetDescription>Agrega una nueva transaccion.</SheetDescription>
         </SheetHeader>
         {isLoading ? (
           <div className="absolute inset-0 flex items-center justify-center">

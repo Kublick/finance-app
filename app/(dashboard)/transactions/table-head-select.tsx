@@ -15,6 +15,18 @@ type Props = {
 
 const options = ["amount", "payee", "notes", "date"];
 
+const optionTexts: Record<string, string> = {
+  amount: "Monto",
+  payee: "Beneficiario",
+  notes: "Notas",
+  date: "Fecha",
+};
+
+const optionsWithText = options.map((option) => ({
+  value: option,
+  text: optionTexts[option],
+}));
+
 export const TableHeadSelect = ({
   columnIndex,
   selectedColumns,
@@ -33,23 +45,23 @@ export const TableHeadSelect = ({
           currentSelection && "text-blue-500",
         )}
       >
-        <SelectValue placeholder="Skip" />
+        <SelectValue placeholder="Saltar" />
         <SelectContent>
-          <SelectItem value="skip">Skip</SelectItem>
+          <SelectItem value="skip">Saltar</SelectItem>
 
-          {options.map((option, index) => {
+          {optionsWithText.map((option, index) => {
             const disabled =
-              Object.values(selectedColumns).includes(option) &&
-              selectedColumns[`column_${columnIndex}`] !== option;
+              Object.values(selectedColumns).includes(option.value) &&
+              selectedColumns[`column_${columnIndex}`] !== option.value;
 
             return (
               <SelectItem
                 key={index}
-                value={option}
+                value={option.value}
                 disabled={disabled}
                 className="capitalize"
               >
-                {option}
+                {option.text}
               </SelectItem>
             );
           })}

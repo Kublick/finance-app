@@ -26,12 +26,12 @@ export const useBulkDeleteTransactions = () => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Transaction deleted");
+      toast.success("Movimiento eliminado");
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to delete transactions");
+      toast.error("Ocurrio un error al eliminar el movimiento");
     },
   });
   return mutation;

@@ -33,6 +33,7 @@ interface DataTableProps<TData, TValue> {
   filterKey: string;
   onDelete: (rows: Row<TData>[]) => void;
   disabled?: boolean;
+  filterAttribute?: string;
 }
 
 export function DataTable<TData, TValue>({
@@ -41,10 +42,11 @@ export function DataTable<TData, TValue>({
   filterKey,
   onDelete,
   disabled,
+  filterAttribute,
 }: DataTableProps<TData, TValue>) {
   const [ConfirmDialog, confirm] = useConfirm(
-    "Are you sure?",
-    "Are you sure you want to perform a bulk delete",
+    "¿Estas Seguro?",
+    "¿Estas seguro de borrar todos los elementos seleccionados?",
   );
 
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -75,7 +77,7 @@ export function DataTable<TData, TValue>({
       <ConfirmDialog />
       <div className="flex items-center py-4">
         <Input
-          placeholder={`Filter ${filterKey}...`}
+          placeholder={`Filtrar ${filterAttribute}...`}
           value={
             (table.getColumn(`${filterKey}`)?.getFilterValue() as string) ?? ""
           }
@@ -88,8 +90,8 @@ export function DataTable<TData, TValue>({
           <Button
             disabled={disabled}
             size="sm"
-            variant="outline"
-            className="ml-auto text-xs font-normal"
+            variant="destructive"
+            className="ml-auto text-sm font-normal"
             onClick={async () => {
               const ok = await confirm();
               if (ok) {
@@ -98,7 +100,7 @@ export function DataTable<TData, TValue>({
               }
             }}
           >
-            <TrashIcon className="mr-2 size-4" /> Delete (
+            <TrashIcon className="mr-2 size-4" /> Eliminar (
             {table.getFilteredSelectedRowModel().rows.length})
           </Button>
         )}
@@ -146,7 +148,7 @@ export function DataTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  No existen resultados.
                 </TableCell>
               </TableRow>
             )}
@@ -155,8 +157,8 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          {table.getFilteredSelectedRowModel().rows.length} de{" "}
+          {table.getFilteredRowModel().rows.length} elementos seleccionados.
         </div>
         <Button
           variant="outline"
@@ -164,7 +166,7 @@ export function DataTable<TData, TValue>({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          Previous
+          Anterior
         </Button>
         <Button
           variant="outline"
@@ -172,7 +174,7 @@ export function DataTable<TData, TValue>({
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          Next
+          Siguiente
         </Button>
       </div>
     </div>

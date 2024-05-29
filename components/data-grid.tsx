@@ -26,7 +26,7 @@ export const DataGrid = () => {
   return (
     <div className="mb-8 grid grid-cols-1 gap-8 pb-2 lg:grid-cols-3">
       <DataCard
-        title="Remaining"
+        title="Saldo"
         value={data?.remainingAmount}
         percentageChange={data?.remainingChange}
         icon={PiggyBank}
@@ -34,7 +34,7 @@ export const DataGrid = () => {
         dateRange={dateRangeLabel}
       />
       <DataCard
-        title="Income"
+        title="Ingresos"
         value={data?.incomeAmount}
         percentageChange={data?.incomeChange}
         icon={TrendingUp}
@@ -42,7 +42,7 @@ export const DataGrid = () => {
         dateRange={dateRangeLabel}
       />
       <DataCard
-        title="Expenses"
+        title="Gastos"
         value={data?.expensesAmount}
         percentageChange={data?.expensesChange}
         icon={TrendingDown}

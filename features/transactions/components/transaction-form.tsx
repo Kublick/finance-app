@@ -12,14 +12,11 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/select";
-import { useCreateAccounts } from "@/features/account/api/use-create-accounts";
 import { DatePicker } from "@/components/date-picker";
 import { Textarea } from "@/components/ui/textarea";
 import { AmountInput } from "@/components/amount-input";
-import { convertAmountFromMiliUnits } from "@/lib/utils";
 import { convertAmountToMiliUnits } from "../../../lib/utils";
 
 const formSchema = z.object({
@@ -107,10 +104,10 @@ export const TransactionForm = ({
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Account</FormLabel>
+                <FormLabel>Cuenta</FormLabel>
                 <FormControl>
                   <Select
-                    placeholder="Select an Account"
+                    placeholder="Selecciona una cuenta"
                     options={accountOptions}
                     onCreate={onCreateAccount}
                     value={field.value}
@@ -128,10 +125,10 @@ export const TransactionForm = ({
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Category</FormLabel>
+                <FormLabel>Categoria</FormLabel>
                 <FormControl>
                   <Select
-                    placeholder="Select a Category"
+                    placeholder="Selecciona una categoria"
                     options={categoryOptions}
                     onCreate={onCreateCategory}
                     value={field.value}
@@ -150,9 +147,13 @@ export const TransactionForm = ({
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Payee</FormLabel>
+                <FormLabel>Beneficiario</FormLabel>
                 <FormControl>
-                  <Input {...field} disabled={disabled} placeholder="Payee" />
+                  <Input
+                    {...field}
+                    disabled={disabled}
+                    placeholder="Beneficiario"
+                  />
                 </FormControl>
               </FormItem>
             );
@@ -165,7 +166,7 @@ export const TransactionForm = ({
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Amount</FormLabel>
+                <FormLabel>Monto</FormLabel>
                 <FormControl>
                   <AmountInput
                     {...field}
@@ -184,12 +185,12 @@ export const TransactionForm = ({
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Notes</FormLabel>
+                <FormLabel>Notas</FormLabel>
                 <FormControl>
                   <Textarea
                     {...field}
                     value={field.value || ""}
-                    placeholder="Optional Notes"
+                    placeholder="Notas"
                     disabled={disabled}
                   />
                 </FormControl>
@@ -199,12 +200,12 @@ export const TransactionForm = ({
         />
 
         <Button className="w-full" disabled={disabled} type="submit">
-          {id ? "Save Changes" : "Create Transaction"}
+          {id ? "Actualizar" : "Crear Movimiento"}
         </Button>
         {!!id && (
           <Button type="button" onClick={handleDelete} variant="outline">
             <Trash className="mr-2 size-4" />
-            Delete Transaction
+            Borrar Movimiento
           </Button>
         )}
       </form>

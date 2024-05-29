@@ -23,14 +23,14 @@ export const useDeleteAccount = (id?: string) => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Account updated");
+      toast.success("Cuenta eliminada");
       queryClient.invalidateQueries({ queryKey: ["account", { id }] });
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to delete account");
+      toast.error("Ocurrio un error al eliminar la cuenta");
     },
   });
   return mutation;

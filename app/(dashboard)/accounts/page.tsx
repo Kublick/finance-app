@@ -19,8 +19,6 @@ const AccountsPage = () => {
 
   const isDisabled = accountsQuery.isLoading || accountsQuery.isPending;
 
-  console.log(newAccount.isOpen);
-
   if (accountsQuery.isLoading)
     return (
       <div className="-m-24 mx-auto w-full max-w-screen-2xl pb-10">
@@ -43,9 +41,9 @@ const AccountsPage = () => {
         <CardHeader
           className={"gap-y-2 lg:flex-row lg:items-center lg:justify-between"}
         >
-          <CardTitle className="line-clamp-1 text-xl">Accounts</CardTitle>
+          <CardTitle className="line-clamp-1 text-xl">Cuentas</CardTitle>
           <Button size={"sm"} onClick={newAccount.onOpen}>
-            <Plus className="mr-2 size-4" /> Add New
+            <Plus className="mr-2 size-4" /> Agregar Cuenta
           </Button>
         </CardHeader>
         <CardContent>
@@ -57,6 +55,7 @@ const AccountsPage = () => {
               const ids = row.map((r) => r.original.id);
               deleteAcoounts.mutate(ids);
             }}
+            filterAttribute="por nombre"
             disabled={isDisabled}
           />
         </CardContent>

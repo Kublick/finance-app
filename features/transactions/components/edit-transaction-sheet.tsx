@@ -113,8 +113,8 @@ export const EditTransactionSheet = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Edit Transaction</SheetTitle>
-            <SheetDescription>Update an existing transaction.</SheetDescription>
+            <SheetTitle>Editar Movimiento</SheetTitle>
+            <SheetDescription>Actualizar una transacción.</SheetDescription>
           </SheetHeader>
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center">

@@ -32,9 +32,9 @@ export const NewCategorySheet = () => {
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>New Category</SheetTitle>
+          <SheetTitle>Nueva Categoria</SheetTitle>
           <SheetDescription>
-            Create a new category to track your transactions.
+            Crea una categoria para agregar transacciones.
           </SheetDescription>
         </SheetHeader>
         <CategoryForm

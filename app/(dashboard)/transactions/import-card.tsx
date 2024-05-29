@@ -54,7 +54,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
     const getColumnIndex = (column: string) => {
       return column.split("_")[1];
     };
-    console.log(getColumnIndex);
+
     const mappedData = {
       headers: headers.map((_header, index) => {
         const columnIndex = getColumnIndex(`column_${index}`);
@@ -117,18 +117,23 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
           className={"gap-y-2 lg:flex-row lg:items-center lg:justify-between"}
         >
           <CardTitle className="line-clamp-1 text-xl">
-            Import Transactions
+            Importar Movimientos
           </CardTitle>
           <div className="flex flex-col items-center gap-x-2 gap-y-2 lg:flex-row">
-            <Button onClick={onCancel} size="sm" className="w-full lg:w-auto">
-              Cancel
+            <Button
+              onClick={onCancel}
+              size="sm"
+              className="w-full lg:w-auto"
+              variant="destructive"
+            >
+              Cancelar
             </Button>
             <Button
               onClick={handleContinue}
               disabled={progress < requiredOptions.length}
               className="w-full lg:w-auto"
             >
-              Continue ({progress} / {requiredOptions.length})
+              Continuar ({progress} / {requiredOptions.length})
             </Button>
           </div>
         </CardHeader>

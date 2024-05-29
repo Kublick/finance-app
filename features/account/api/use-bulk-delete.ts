@@ -26,13 +26,13 @@ export const useBulkDeleteAccounts = () => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Account deleted");
+      toast.success("Cuentas eliminadas");
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to delete accounts");
+      toast.error("Ocurrio un error al eliminar las cuentas");
     },
   });
   return mutation;

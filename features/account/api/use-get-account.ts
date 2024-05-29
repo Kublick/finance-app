@@ -9,7 +9,6 @@ export const useGetAccount = (id?: string) => {
       const respose = await client.api.accounts[":id"].$get({
         param: { id },
       });
-      console.log("response", respose);
 
       if (!respose.ok) {
         throw new Error("Failed to fetch account");

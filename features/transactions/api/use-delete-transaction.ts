@@ -23,13 +23,13 @@ export const useDeleteTransaction = (id?: string) => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Account updated");
+      toast.success("Movimiento eliminado");
       queryClient.invalidateQueries({ queryKey: ["account", { id }] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to delete transaction");
+      toast.error("Ocurrio un error al eliminar el movimiento");
     },
   });
   return mutation;

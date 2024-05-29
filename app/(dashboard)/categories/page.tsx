@@ -41,9 +41,9 @@ const CategoriesPage = () => {
         <CardHeader
           className={"gap-y-2 lg:flex-row lg:items-center lg:justify-between"}
         >
-          <CardTitle className="line-clamp-1 text-xl">Categories</CardTitle>
+          <CardTitle className="line-clamp-1 text-xl">Categorias</CardTitle>
           <Button size={"sm"} onClick={newCategory.onOpen}>
-            <Plus className="mr-2 size-4" /> Add New
+            <Plus className="mr-2 size-4" /> Agregar Categoria
           </Button>
         </CardHeader>
         <CardContent>
@@ -56,6 +56,7 @@ const CategoriesPage = () => {
               deleteCategories.mutate(ids);
             }}
             disabled={isDisabled}
+            filterAttribute="por nombre"
           />
         </CardContent>
       </Card>

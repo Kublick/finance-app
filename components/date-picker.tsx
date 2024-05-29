@@ -32,7 +32,7 @@ export const DatePicker = ({ value, onChange, disabled }: Props) => {
           )}
         >
           <CalendarIcon className="mr-4 size-4" />
-          {value ? format(value, "PPP") : "Pick a date"}
+          {value ? format(value, "PPP") : "Selecciona una fecha"}
         </Button>
       </PopoverTrigger>
       <PopoverContent>

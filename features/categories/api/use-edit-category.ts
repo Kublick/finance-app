@@ -28,13 +28,13 @@ export const useEditCategory = (id?: string) => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Category updated");
+      toast.success("Categoria actualizada");
       queryClient.invalidateQueries({ queryKey: ["category", { id }] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
     },
     onError: (error) => {
-      toast.error("Failed to update category");
+      toast.error("Ocurrio un error al eliminar la categoria");
     },
   });
   return mutation;

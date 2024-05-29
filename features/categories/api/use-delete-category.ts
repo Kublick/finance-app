@@ -23,14 +23,14 @@ export const useDeleteCategory = (id?: string) => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Category updated");
+      toast.success("Categoria eliminada");
       queryClient.invalidateQueries({ queryKey: ["category", { id }] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to delete category");
+      toast.error("Ocurrio un error al eliminar la categoria");
     },
   });
   return mutation;

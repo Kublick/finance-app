@@ -28,13 +28,13 @@ export const useEditTransaction = (id?: string) => {
       return response.json();
     },
     onSuccess: () => {
-      toast.success("Transaction updated");
+      toast.success("Movimiento Actualizado");
       queryClient.invalidateQueries({ queryKey: ["transaction", { id }] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: (error) => {
-      toast.error("Failed to update transaction");
+      toast.error("Ocurrio un error al actualizar el movimiento");
     },
   });
   return mutation;

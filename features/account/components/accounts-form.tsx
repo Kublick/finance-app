@@ -58,12 +58,12 @@ export const AccountForm = ({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Nombre</FormLabel>
               <FormControl>
                 <Input
                   disabled={disabled}
                   {...field}
-                  placeholder="e.g. Cash, Bank, Credit Card"
+                  placeholder="ej Nomina, Tarjeta de credito, Inversion"
                 />
               </FormControl>
             </FormItem>
@@ -71,12 +71,12 @@ export const AccountForm = ({
         />
 
         <Button className="w-full" disabled={disabled} type="submit">
-          {id ? "Save Changes" : "Create Account"}
+          {id ? "Guardar Cambios" : "Crear Cuenta"}
         </Button>
         {!!id && (
           <Button type="button" onClick={handleDelete} variant="outline">
             <Trash className="mr-2 size-4" />
-            Delete Account
+            Borrar Cuenta
           </Button>
         )}
       </form>

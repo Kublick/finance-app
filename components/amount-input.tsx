@@ -9,7 +9,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { and, is } from "drizzle-orm";
 
 type Props = {
   value: string;
@@ -53,7 +52,7 @@ export const AmountInput = ({
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            Use [+] for income and [-] for expenses.
+            Usa [+] para ingreso y [-] para gastos.
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -68,8 +67,8 @@ export const AmountInput = ({
         disabled={disabled}
       />
       <p className="mt-2 text-xs text-muted-foreground">
-        {isIncome && "This will count as income"}
-        {isExpense && "This will count as expense"}
+        {isIncome && "Se registrara como ingreso"}
+        {isExpense && "Se registrara como gasto"}
       </p>
     </div>
   );

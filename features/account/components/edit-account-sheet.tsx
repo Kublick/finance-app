@@ -58,8 +58,8 @@ export const EditAccount = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Edit Account</SheetTitle>
-            <SheetDescription>Update an existing account.</SheetDescription>
+            <SheetTitle>Actualizar Cuenta</SheetTitle>
+            <SheetDescription>Actualiza una cuenta.</SheetDescription>
           </SheetHeader>
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center">
