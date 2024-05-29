@@ -65,7 +65,7 @@ const SpendingPie = ({ data = [] }: Props) => {
           <div className="flex flex-row items-center gap-4">
             <FileSearch className="text-muted-foregrund size-6" />
             <p className="text-sm text-muted-foreground">
-              No Data for this Period
+              No hay datos para este periodo
             </p>
           </div>
         ) : (

@@ -21,7 +21,7 @@ export const CategoryToolTip = ({ active, payload }: any) => {
         <div className="flex items-center justify-between gap-x-4">
           <div className="flex items-center gap-2">
             <div className="size-1.5 rounded-full bg-rose-500" />
-            <p className="text-sm text-muted-foreground">Expenses</p>
+            <p className="text-sm text-muted-foreground">Gastos</p>
           </div>
           <p className="text-right text-sm font-medium">
             {formatCurrency(value * -1)}

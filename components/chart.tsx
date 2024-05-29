@@ -38,7 +38,7 @@ const Chart = ({ data = [] }: Props) => {
   return (
     <Card className="border-shadow-sm border-none">
       <CardHeader className="flex justify-between space-y-2 lg:flex-row lg:items-center lg:space-y-0 ">
-        <CardTitle className="line-clamp-1 text-xl">Transacciones</CardTitle>
+        <CardTitle className="line-clamp-1 text-xl">Movimientos</CardTitle>
         <Select defaultValue={chartType} onValueChange={onTypeChange}>
           <SelectTrigger className="h-9 rounded-md px-3 lg:w-auto">
             <SelectValue placeholder="Select Chart Type" />
@@ -70,7 +70,7 @@ const Chart = ({ data = [] }: Props) => {
           <div className="flex flex-row items-center gap-4">
             <FileSearch className="text-muted-foregrund size-6" />
             <p className="text-sm text-muted-foreground">
-              No Data for this Period
+              No hay datos para este periodo
             </p>
           </div>
         ) : (
