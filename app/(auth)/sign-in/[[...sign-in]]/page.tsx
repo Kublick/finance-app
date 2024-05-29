@@ -9,7 +9,7 @@ export default function Page() {
         <div className="space-y-4 pt-16 text-center">
           <h1 className="text-3xl font-bold text-[#2E2A47]">Bienvenido</h1>
           <p className="text-base text-[#7E8CA0]">
-            Ingresa o crea una cuenta para acceder a tu dashboard
+            Ingresa o crea una cuenta para tomar control de tus finanzas
           </p>
         </div>
         <div className="mt-8 flex items-center justify-center">

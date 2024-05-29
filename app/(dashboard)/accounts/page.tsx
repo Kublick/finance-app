@@ -21,7 +21,7 @@ const AccountsPage = () => {
 
   if (accountsQuery.isLoading)
     return (
-      <div className="-m-24 mx-auto w-full max-w-screen-2xl pb-10">
+      <div className="mx-auto -mt-0 w-full max-w-screen-2xl pb-10 lg:-mt-16">
         <Card className="border-none drop-shadow-sm">
           <CardHeader>
             <Skeleton className="h-18 w-48" />
@@ -36,7 +36,7 @@ const AccountsPage = () => {
     );
 
   return (
-    <div className="-m-24 mx-auto w-full max-w-screen-2xl pb-10">
+    <div className="mx-auto -mt-0 w-full max-w-screen-2xl pb-10 lg:-mt-16">
       <Card className="border-none drop-shadow-sm">
         <CardHeader
           className={"gap-y-2 lg:flex-row lg:items-center lg:justify-between"}
@@ -55,7 +55,7 @@ const AccountsPage = () => {
               const ids = row.map((r) => r.original.id);
               deleteAcoounts.mutate(ids);
             }}
-            filterAttribute="por nombre"
+            filterAttribute="pornombre"
             disabled={isDisabled}
           />
         </CardContent>

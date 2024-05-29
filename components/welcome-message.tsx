@@ -10,7 +10,7 @@ const WelcomeMsg = () => {
         Bienvenido{isLoaded ? ", " : " "}
         {user?.fullName}
       </h2>
-      <p className={"pb-16 text-sm text-[#89b6fd] lg:text-base"}>
+      <p className={"pb-4 text-sm text-[#89b6fd] lg:text-base"}>
         Este es tu resumen financiero
       </p>
     </div>
